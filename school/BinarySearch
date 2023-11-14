@@ -1,0 +1,40 @@
+import java.util.*;
+public class BinarySearch
+{
+    public static void main(String args[])
+    {
+        Scanner in = new Scanner(System.in);
+        int a[] = new int[10];
+        int i;
+        for(i=0;i<10;i++)
+        {
+            System.out.println("Enter value "+(i+1));
+            a[i] = in.nextInt();
+        }
+        int low=0;
+        int high=9;
+        int m;
+        System.out.println("Enter key");
+        int k = in.nextInt();
+        while(high>=low)
+        {
+            m=(low+high)/2;
+            if(a[m]==k)
+            {
+                System.out.println("Index:"+m);
+                break;
+            }
+            else
+            {
+                if(k>a[m])
+                {
+                    low=m+1;
+                }
+                else
+                {
+                    high=m-1;
+                }
+            }
+        }
+    }
+}
